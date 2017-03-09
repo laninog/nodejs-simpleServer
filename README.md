@@ -10,7 +10,7 @@ Node.js simple server example
 Usage
 ---------------------
 ```sh
-run node server.js
+node server.js
 ```
 Server will be listening [here](http://localhost:1337) 
 
