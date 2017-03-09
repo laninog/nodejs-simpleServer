@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-simpleServer",
+  "version": "0.1.0",
+  "description": "Simple server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laninog/nodejs-simpleServer.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "alejandro6230@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laninog/nodejs-simpleServer/issues"
+  },
+  "homepage": "https://github.com/laninog/nodejs-simpleServer#readme"
+}
