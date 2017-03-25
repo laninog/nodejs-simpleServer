@@ -3,6 +3,8 @@ let http = require('http');
 let url = require('url');
 let path = require('path');
 let fs = require('fs');
+let UAParser = require('ua-parser-js');
+let parser = new UAParser();
 
 // Array of mime types
 let mimeTypes = {
@@ -33,6 +35,12 @@ http.createServer(function (req, res) {
         return;
     }
 
+    console.log('----------- Request Info -----------');
+    console.log('http ', req.httpVersion);
+    console.log('method', req.method);
+    console.log(parser.setUA(req.headers['user-agent']).getResult());
+    console.log('----------- ------------ -----------');
+
     // Check if file/directory
     if (stats.isFile()) {
         let mimeType = mimeTypes[path.extname(fileName).split('.')
@@ -55,7 +63,7 @@ http.createServer(function (req, res) {
         res.end();
     }
 
-}).listen(1337, '127.0.0.1');
+}).listen(1337, '0.0.0.0');
 
 /*
  * http.createServer(function (req, res){ res.writeHead(200, {'Content-type':

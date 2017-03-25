@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/laninog/nodejs-simpleServer/issues"
   },
-  "homepage": "https://github.com/laninog/nodejs-simpleServer#readme"
+  "homepage": "https://github.com/laninog/nodejs-simpleServer#readme",
+  "dependencies": {
+    "ua-parser-js": "^0.7.12"
+  }
 }
