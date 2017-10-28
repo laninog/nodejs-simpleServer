@@ -20,7 +20,7 @@ let mimeTypes = {
 http.createServer(function (req, res) {
 
     let uri = url.parse(req.url).pathname;
-    let fileName = path.join(process.cwd(), unescape(uri));
+    let fileName = path.join(process.cwd(), decodeURI(uri));
     console.log('Loading ' + uri);
     let stats;
 
@@ -35,9 +35,13 @@ http.createServer(function (req, res) {
         return;
     }
 
+    let ip = req.headers['x-forwarded-for'] || req.connection.address();
+
     console.log('----------- Request Info -----------');
     console.log('http ', req.httpVersion);
     console.log('method', req.method);
+    console.log('ip', ip);
+    console.log('headers', req.headers);
     console.log(parser.setUA(req.headers['user-agent']).getResult());
     console.log('----------- ------------ -----------');
 
